@@ -7,9 +7,6 @@ url = f"https://docs.google.com/spreadsheets/d/1lj92K_9shLGq5qY7pEzyHFLFn6rk3eED
 
 df = pd.read_csv(url)
 
-# --- DEBUG LINE: This will show you exactly what the columns are named ---
-st.write("Current Columns found in Sheet:", df.columns.tolist())
-
 # Adjust the name below based on what you see in the list above!
 player_name = st.selectbox("Pick a player:", df.iloc[:, 0]) # This picks the 1st column regardless of name
 
