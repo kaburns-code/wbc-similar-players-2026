@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+from openai import OpenAI
 
 # Connect to Sheet
 SHEET_ID = "YOUR_ID_HERE"
