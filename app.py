@@ -21,8 +21,8 @@ st.markdown("Find the MLB twin for international stars.")
 df = pd.read_csv(url)
 
 # 3. User Interaction
-player_name = st.selectbox("Pick a player to scout:", df["Player's name"])
-player_info = df[df["Player's name"] == player_name].iloc[0]
+player_name = st.selectbox("Pick a player to scout:", df["Player's Name"])
+player_info = df[df["Player's Name"] == player_name].iloc[0]
 
 if st.button("Get Scouting Report"):
     client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
