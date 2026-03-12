@@ -25,9 +25,9 @@ if st.button("Get Scouting Report"):
     
     prompt = f"""
     Act as a professional MLB scout. 
-    Player: {player_info["Player's name"]}
+    Player: {player_info["Player's Name"]}
     Position: {player_info["Position"]}
-    Current Team: {player_info["Current professional team"]}
+    Current Team: {player_info["Current Professional Team"]}
     League: {player_info["League"]}
     
     Task: Give a 2-sentence scouting report and name one current MLB player who is their closest 'twin' in terms of playstyle.
