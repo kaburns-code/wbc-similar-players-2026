@@ -1,11 +1,17 @@
 import streamlit as st
 import pandas as pd
-from openai import OpenAI
 
-# 1. Connect to your Google Sheet (Replace YOUR_SHEET_ID)
-SHEET_ID = "PASTE_YOUR_ID_HERE"
-SHEET_NAME = "Sheet1" # Check the name at the bottom of your sheet
-url = f"https://docs.google.com/spreadsheets/d/1lj92K_9shLGq5qY7pEzyHFLFn6rk3eEDb3NQjWbVVds/gviz/tq?tqx=out:csv&sheet=MLBplayers"
+# Connect to Sheet
+SHEET_ID = "YOUR_ID_HERE"
+url = f"https://docs.google.com/spreadsheets/d/1lj92K_9shLGq5qY7pEzyHFLFn6rk3eEDb3NQjWbVVds/gviz/tq?tqx=out:csv"
+
+df = pd.read_csv(url)
+
+# --- DEBUG LINE: This will show you exactly what the columns are named ---
+st.write("Current Columns found in Sheet:", df.columns.tolist())
+
+# Adjust the name below based on what you see in the list above!
+player_name = st.selectbox("Pick a player:", df.iloc[:, 0]) # This picks the 1st column regardless of name
 
 # 2. Setup the App UI
 st.title("⚾ 2026 WBC International Scout")
